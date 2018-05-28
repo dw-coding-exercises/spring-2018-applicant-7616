@@ -3,7 +3,7 @@
             [ring.util.anti-forgery :refer [anti-forgery-field]]
             [my-exercise.us-state :as us-state]))
 
-(defn header [_]
+(defn header []
   [:head
    [:meta {:charset "UTF-8"}]
    [:meta {:name "viewport"
@@ -11,7 +11,7 @@
    [:title "Find my next election"]
    [:link {:rel "stylesheet" :href "default.css"}]])
 
-(defn getting-started [_]
+(defn getting-started []
   [:div {:class "getting-started"}
    [:h1 "Getting started"]
    [:p "Thank you for applying to work at Democracy Works! "
@@ -92,7 +92,7 @@
 
 (defn instructions [request]
   [:div {:class "instructions"}
-   (getting-started request)
+   (getting-started )
    (ocd-id-explainer request)
    (current-elections-link request)])
 
@@ -131,8 +131,10 @@
     [:div.button
      [:button {:type "submit"} "Search"]]]])
 
+
 (defn page [request]
   (html5
-   (header request)
+   (header )
    (instructions request)
-   (address-form request)))
+   (address-form request)
+  ))
